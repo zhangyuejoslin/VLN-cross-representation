@@ -50,17 +50,6 @@ def get_viewheading(scan_id, view_list, positive=False):
 
         :return: the viewpoint list with heading information.
     """
-    def get_heading(heading):
-        headingIndex = {0:'0.0', 1:'0.5235987755982988', 2:'1.0471975511965976', 3:'1.5707963267948966', 4:'2.0943951023931953', 5:'2.6179938779914944',
-                         6:'3.141592653589793', 7:'3.6651914291880923', 8:'4.1887902047863905', 9:'4.71238898038469', 10:'5.235987755982989', 
-                         11:'5.759586531581287'}
-        if heading < 12:
-            return headingIndex[heading*0] + "_" + "-0.5235987755982988"
-        elif heading >= 12 and heading < 24:
-            return headingIndex[heading - 12*1] + "_" + "0.0"
-        else:
-            return headingIndex[heading - 12*2] + "_" + "0.5235987755982988"
-
     new_view_list = []
     for view_id, view in enumerate(view_list):
         if view_id < len(view_list)-1:
